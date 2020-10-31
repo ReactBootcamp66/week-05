@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
+import SessionContext from './contexts/SessionContext';
+
+import Container from './components/Container/Container';
+import Content from './components/Content/Content';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+
 function App() {
+  const [isAuthenticated, setAuthenticated] = useState(false);
+  const [basket, setBasket] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SessionContext.Provider
+      value={{
+        isAuthenticated,
+        setAuthenticated,
+        basket,
+        setBasket,
+      }}
+    >
+      <Container>
+        <Header />
+        <Content />
+        <Footer />
+      </Container>
+    </SessionContext.Provider>
   );
 }
 
