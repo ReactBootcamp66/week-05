@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  position: sticky;
-
-  width: 100%;
-  height: 70px;
-  padding: 4em;
+  padding: 1.5em 4em;
 
   background-color: #a00b42;
+`;
+
+export const InlineContainer = styled.div`
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Menu = styled.ul`
@@ -25,5 +28,7 @@ export const Menu = styled.ul`
 `;
 
 export const Title = styled.h1`
+  margin: 0;
+
   color: #fff;
 `;

@@ -2,6 +2,12 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Button from '../../components/Button/Button';
+import {
+  Box,
+  ErrorMessage,
+  FormContainer,
+  Title,
+} from '../../components/FormElements/WrappedFormElements';
 import Input from '../../components/Input/Input';
 
 import SessionContext from '../../contexts/SessionContext';
@@ -28,30 +34,33 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {error && <p>{error}</p>}
-      <Input
-        type="text"
-        name="username"
-        placeholder="Username"
-        autoComplete="off"
-        value={username}
-        onChange={(event) => {
-          setUsername(event.target.value);
-        }}
-      />
-      <Input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={password}
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
+    <Box>
+      <Title>Tepsiburada</Title>
+      <FormContainer onSubmit={handleSubmit}>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
+        <Input
+          type="text"
+          name="username"
+          placeholder="Username"
+          autoComplete="off"
+          value={username}
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
+        />
+        <Input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
 
-      <Button type="submit" text="Login" />
-    </form>
+        <Button type="submit" text="Login" />
+      </FormContainer>
+    </Box>
   );
 };
 

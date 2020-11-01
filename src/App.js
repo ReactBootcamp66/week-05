@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import SessionContext from './contexts/SessionContext';
+import CartContext from './contexts/CartContext';
 
 import Container from './components/Container/Container';
 import Content from './components/Content/Content';
@@ -11,21 +11,26 @@ import Header from './components/Header/Header';
 
 function App() {
   const [isAuthenticated, setAuthenticated] = useState(false);
-  const [basket, setBasket] = useState([]);
+  const [cart, updateCart] = useState([]);
   return (
     <SessionContext.Provider
       value={{
         isAuthenticated,
         setAuthenticated,
-        basket,
-        setBasket,
       }}
     >
-      <Container>
-        <Header />
-        <Content />
-        <Footer />
-      </Container>
+      <CartContext.Provider
+        value={{
+          cart,
+          updateCart,
+        }}
+      >
+        <Container>
+          {isAuthenticated && <Header />}
+          <Content />
+          <Footer />
+        </Container>
+      </CartContext.Provider>
     </SessionContext.Provider>
   );
 }

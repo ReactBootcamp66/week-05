@@ -1,5 +1,5 @@
 import Home from '../screens/Home/Home';
-import Products from '../screens/Products/Products';
+import ProductsScreen from '../screens/ProductsScreen/ProductsScreen';
 import ProductDetail from '../screens/ProductDetail/ProductDetail';
 import Login from '../screens/Login/Login';
 
@@ -21,10 +21,11 @@ export const routes = [
   },
   {
     path: '/products',
-    component: () => <Products />,
+    component: () => <ProductsScreen />,
     title: 'Products',
     isLink: true,
     isPrivate: true,
+    exact: true,
   },
   {
     path: '/products/:productId',

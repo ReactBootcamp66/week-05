@@ -1,7 +1,10 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import Layout from '../../components/Layout/Layout';
 
 const ProductDetail = () => {
-  return <div>Product Detail</div>;
+  const { productId } = useParams();
+  return <Layout>Product Detail - {productId}</Layout>;
 };
 
 export default ProductDetail;
