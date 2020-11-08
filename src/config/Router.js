@@ -2,6 +2,7 @@ import Home from '../screens/Home/Home';
 import ProductsScreen from '../screens/ProductsScreen/ProductsScreen';
 import ProductDetail from '../screens/ProductDetail/ProductDetail';
 import Login from '../screens/Login/Login';
+import Test from '../screens/Test/Test';
 
 export const routes = [
   {
@@ -23,6 +24,14 @@ export const routes = [
     path: '/products',
     component: () => <ProductsScreen />,
     title: 'Products',
+    isLink: true,
+    isPrivate: true,
+    exact: true,
+  },
+  {
+    path: '/Test',
+    component: () => <Test />,
+    title: 'Test',
     isLink: true,
     isPrivate: true,
     exact: true,

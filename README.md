@@ -68,3 +68,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+// /products
+{
+
+}
+
+// Request
+Header
+Body
+
+GET
+/products
+{
+result: [
+{
+title: 'Title 1',
+content: 'Content 1',
+},
+{
+title: 'Title 2',
+content: 'Content 2',
+}
+]
+}
+
+GET
+/products/{:id}
+{
+result: {
+title: 'Title 1',
+content: 'Content 1',
+}
+}
+
+POST
+Endpoint: /products
+Body: {
+title: 'Title 1',
+content: 'Content 1',
+}
+
+/graphql
+POST
