@@ -23,7 +23,6 @@ const Cart = () => {
   const { cart, updateCart } = useContext(CartContext);
 
   useOutsideAlerter(cartContentRef, () => {
-    console.log('outside click detected', isContentOpen);
     if (isContentOpen) {
       setContentOpen(false);
     }

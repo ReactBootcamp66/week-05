@@ -7,8 +7,6 @@ const Test = () => {
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  console.log(process.env);
-
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((response) => response.json())
