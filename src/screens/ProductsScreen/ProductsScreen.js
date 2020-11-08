@@ -14,7 +14,7 @@ const ProductsScreen = () => {
   const { updateCart } = useContext(CartContext);
 
   const handleShowDetailClick = (product) => {
-    history.push(`/products/${product.id}`);
+    history.push(`/products/${product.id}`, { product });
   };
 
   const handleAddToCartClick = (product) => {
